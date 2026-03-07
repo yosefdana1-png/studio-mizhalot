@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="description" content="תהליך העבודה בסטודיו מצהלות - איך אנחנו עובדים? פשוט, מהיר ומקצועי.">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <title>איך זה עובד? | סטודיו מצהלות</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Rubik:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="lock.js"></script>
+    <meta name="robots" content="noindex, nofollow">
+
+    <style>
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .step-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            text-align: center;
+            position: relative;
+            border: 1px solid #eee;
+        }
+
+        .step-number {
+            background: var(--primary-color, #bfa05f);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 0 auto 15px;
+        }
+
+        .step-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        /* --- פתרון סופי להדגשות בתפריט --- */
+
+        /* 1. כפיית הדגשה ל"איך זה עובד" (תמיד יישאר זהב) */
+        a.current-page {
+            color: #bfa05f !important; /* צבע הזהב שלך */
+            font-weight: 800 !important;
+            position: relative;
+        }
+
+        /* הוספת הקו התחתון במחשב (כמו Active רגיל) */
+        /* --- הגדרות למחשב (מסך גדול) - מתוקן להצמדה לימין --- */
+        @media (min-width: 769px) {
+            nav {
+                justify-content: flex-start !important; /* מתחיל הכל מימין */
+                gap: 40px !important; /* רווח יפה בין הלוגו לתפריט */
+            }
+
+            .nav-links {
+                margin-right: 0 !important; /* מבטל את הדחיפה שמאלה */
+                margin-left: 0 !important;
+                display: flex !important;
+                gap: 30px; /* רווח בין הכפתורים בתפריט */
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: #fcfcfc !important;">
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                    <img src="assets/logo.m-1.png" alt="Studio Mizhalot">
+                </a>
+            
+            <nav>
+                <button class="hamburger" aria-label="תפריט">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-links">
+                    <button class="close-menu" aria-label="סגור תפריט">&times;</button>
+                    
+                    <li><a href="index.html">בית</a></li>
+                    <li><a href="process.html" class="current-page">איך זה עובד?</a></li>
+                    <li><a href="portfolio.html">תיק עבודות</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-progress-bar"></div>
+    </header>
+
+    <main>
+        <section class="section" style="background-color: #fcfcfc; padding-top: 100px;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>איך זה עובד?</h2>
+                    <p>תהליך עבודה פשוט, מהיר ומקצועי</p>
+                </div>
+
+                <div class="process-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="icon">💬</div>
+                        <h3>מתחילים לדבר</h3>
+                        <p>שולחים הודעה בוואטסאפ, מספרים לי על הפרויקט ומתאמים ציפיות.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="icon">🎨</div>
+                        <h3>יוצרים סקיצה</h3>
+                        <p>אני ניגשת לעבודה ושולחת סקיצות ראשוניות. מתקנים ומדייקים עד שאתה מרוצה.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="icon">✨</div>
+                        <h3>מקבלים תוצרים</h3>
+                        <p>זהו! מקבלים את כל הקבצים סגורים ומוכנים לדפוס ולדיגיטל באיכות מקסימלית.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="text-align:center; padding-top: 50px;">
+            <a href="index.html#contact" class="btn">בוא נתחיל פרויקט</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 סטודיו מצהלות. כל הזכויות שמורות.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <a href="https://wa.me/972585888205" class="whatsapp-float" target="_blank">
+        <img src="assets/wa.png" alt="WhatsApp">
+    </a>
+    <button id="scrollTopBtn" title="Go to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+    </button>
+</body>
+
+</html>

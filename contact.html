@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>צור קשר | סטודיו מצהלות</title>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Rubik:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="lock.js"></script>
+
+
+</head>
+
+<body class="fixed-background">
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.m-1.png" alt="Studio Mizhalot">
+            </a>
+            
+            <nav>
+                <button class="hamburger"><span></span><span></span><span></span></button>
+                <ul class="nav-links">
+                    <button class="close-menu">&times;</button>
+                    <li><a href="index.html">בית</a></li>
+                    <li><a href="process.html">איך זה עובד?</a></li>
+                    <li><a href="portfolio.html">תיק עבודות</a></li>
+                    <li><a href="contact.html" class="current-page">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-progress-bar"></div>
+    </header>
+
+    <main>
+        <section class="section" style="padding-top: 120px;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>בואו נדבר</h2>
+                    <p>אנחנו כאן לכל שאלה, התייעצות או הצעת מחיר</p>
+                </div>
+
+                <div class="contact-methods">
+                    <a href="https://wa.me/972585888205" target="_blank" class="contact-card">
+                        <img src="assets/wha.png" alt="Email" class="wha.png">
+                        <h3>וואטסאפ</h3>
+                        <p>זמינים לכל שאלה</p>
+                    </a>
+                    <a href="mailto:mizhalot@gmail.com" class="contact-card">
+                            <img src="assets/mail.png" alt="Email" class="email-icon.png">
+                            <h3>אימייל</h3>
+                            <p>mizhalot@gmail.com</p>
+                        </a>
+                    <a href="tel:0585888205" class="contact-card">
+                        <img src="assets/tel.png" alt="Email" class="tel.png">
+                        <h3>טלפון</h3>
+                        <p>058-588-8205</p>
+                    </a>
+                </div>
+
+                <div class="form-container">
+                    <h3>או השאירו פרטים ונחזור אליכם</h3>
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" required placeholder=" ">
+                            <label>שם מלא</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" required placeholder=" ">
+                            <label>טלפון</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" required placeholder=" ">
+                            <label>אימייל</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="4" placeholder=" "></textarea>
+                            <label>מה תרצו לעצב?</label>
+                        </div>
+                        <button type="submit" class="btn submit-btn">שלח פניה</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 סטודיו מצהלות. כל הזכויות שמורות.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <a href="https://wa.me/972585888205" class="whatsapp-float" target="_blank"><img src="assets/wa.png" alt="WhatsApp"></a>
+</body>
+</html>

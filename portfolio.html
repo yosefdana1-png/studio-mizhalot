@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>תיק עבודות | סטודיו מצהלות</title>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Rubik:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="lock.js"></script>
+
+    <style>
+        /* --- עיצוב הגריד: 2 בשורה, בתוך הקונטיינר --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* בדיוק 2 עמודות שוות */
+            gap: 30px;         /* רווח יפה בין התמונות */
+            padding-bottom: 60px;
+        }
+
+        /* --- עיצוב הכרטיס --- */
+        .category-card {
+            display: block;
+            position: relative;
+            text-decoration: none;
+            overflow: hidden;
+            border-radius: 16px; /* פינות עגולות */
+            
+            /* גובה הריבוע */
+            height: 450px;
+            width: 100%;
+            
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08); /* צל עדין */
+            transition: all 0.4s ease;
+        }
+
+        /* אפקט הרמה במעבר עכבר */
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+            display: block;
+        }
+
+        /* אפקט זום לתמונה */
+        .category-card:hover img {
+            transform: scale(1.1);
+        }
+
+        /* שכבת הטקסט */
+        .category-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.35); /* כהה מספיק כדי לקרוא */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.3s ease;
+            z-index: 2;
+        }
+
+        .category-card:hover .category-overlay {
+            background: rgba(0, 0, 0, 0.25); /* מבהיר קצת כשעוברים */
+        }
+
+        .category-overlay h3 {
+            color: white;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            font-family: 'Frank Ruhl Libre', serif;
+        }
+
+        .category-overlay span {
+            color: white;
+            font-size: 1.1rem;
+            border: 1px solid white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s;
+        }
+
+        .category-card:hover .category-overlay span {
+            background: white;
+            color: black;
+            font-weight: 500;
+        }
+
+        /* --- התאמה לנייד --- */
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr; /* בנייד - תמונה מתחת לתמונה */
+                gap: 20px;
+            }
+            
+            .category-card {
+                height: 300px; /* גובה מותאם לנייד */
+            }
+            
+            .category-overlay h3 {
+                font-size: 2rem;
+            }
+        }
+        /* --- תיקון גובה בנייד (החזרה למצב הקודם) --- */
+        @media (max-width: 768px) {
+            
+            /* 1. הגדרת גריד: תמונה אחת בשורה (טור) */
+            .portfolio-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            
+            /* 2. הגדרת גובה הכרטיס: נמוך וסטנדרטי */
+            .category-card {
+                height: 220px !important; /* זה הגובה ה"רגיל" לנייד */
+            }
+            
+            /* 3. התאמת גודל הטקסט לגובה החדש */
+            .category-overlay h3 {
+                font-size: 1.8rem !important; /* קצת יותר קטן מהענק של המחשב */
+            }
+            
+            .category-overlay span {
+                padding: 6px 15px !important; /* כפתור עדין יותר */
+                font-size: 0.9rem !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="fixed-background">
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                    <img src="assets/logo.m-1.png" alt="Studio Mizhalot">
+                </a>
+            
+            <nav>
+                <button class="hamburger" aria-label="תפריט"><span></span><span></span><span></span></button>
+
+                <ul class="nav-links">
+                    <button class="close-menu">&times;</button>
+                    <li><a href="index.html">בית</a></li>
+                    <li><a href="index.html#about">אודות</a></li>
+                    <li><a href="portfolio.html" class="active" style="color: #bfa05f; font-weight: 800;">תיק עבודות</a></li>
+                    <li><a href="process.html">איך זה עובד?</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="header-progress-bar"></div> </header>
+    </header>
+
+    <main>
+        
+        <section style="padding-top: 120px; padding-bottom: 40px; text-align: center;">
+            <div class="container">
+                <div class="section-header" style="margin-bottom: 20px;">
+                    <h2>תיק העבודות שלנו</h2>
+                    <p>בחרו קטגוריה לצפייה בפרויקטים</p>
+                </div>
+                
+                <div class="portfolio-grid">
+                    
+                    <a href="logos.html" class="category-card">
+                        <img src="assets/gitit.jpg" alt="עיצוב לוגו">
+                        <div class="category-overlay">
+                            <h3>לוגו</h3>
+                            <span>לצפייה בגלריה</span>
+                        </div>
+                    </a>
+                    
+                    <a href="books.html" class="category-card">
+                        <img src="assets/hahamyosef.jpg" alt="עיצוב ספרים">
+                        <div class="category-overlay">
+                            <h3>ספרים</h3>
+                            <span>לצפייה בגלריה</span>
+                        </div>
+                    </a>
+
+                    <a href="flyers.html" class="category-card">
+                        <img src="assets/tat.jpg" alt="פליירים">
+                        <div class="category-overlay">
+                            <h3>פליירים</h3>
+                            <span>לצפייה בגלריה</span>
+                        </div>
+                    </a>
+
+                    <!--                   <a href="invitations.html" class="category-card">
+                        <img src="assets/PHOTO-2026-01-10-22-00-51 4.jpg" alt="הזמנות">
+                        <div class="category-overlay">
+                            <h3>הזמנות</h3>
+                            <span>לצפייה בגלריה</span>
+                        </div>
+                    </a>     -->
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 סטודיו מצהלות. כל הזכויות שמורות.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <a href="https://wa.me/972585888205" class="whatsapp-float" target="_blank"><img src="assets/wa.png" alt="WhatsApp"></a>
+</body>
+</html>

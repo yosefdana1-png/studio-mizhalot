@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="description" content="עיצוב לוגו ומיתוג עסקי בסטודיו מצהלות. מיתוג ייחודי ומדויק לעסק שלך.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <title>עיצוב לוגו | סטודיו מצהלות</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Rubik:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="lock.js"></script>
+
+    <style>
+        /* --- עיצוב לוגואים: שקיפות מלאה (ללא רקע לטקסט) --- */
+        
+        /* 1. הגדרת הכרטיס */
+        .portfolio-item {
+            height: 300px !important;
+            background: #fff !important;
+            border: 1px solid #eee !important;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        /* 2. התמונה - מלאה מקצה לקצה */
+        .portfolio-item img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            padding: 0 !important;
+            background: #fff;
+            transition: transform 0.5s ease;
+            border: none !important;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* 3. אזור הטקסט - שקוף לחלוטין! */
+        .portfolio-overlay {
+            position: absolute !important;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto !important;
+            
+            /* --- השינוי: ביטול מוחלט של כל הרקעים --- */
+            background: transparent !important;
+            background-color: transparent !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            box-shadow: none !important;
+            border: none !important;
+            mask-image: none !important;
+
+            /* ריפוד קטן כדי להרחיק מהקצה */
+            padding: 15px 15px 15px !important;
+            
+            /* סידור GRID (כפתור לצד טקסט) */
+            display: grid !important;
+            grid-template-columns: 1fr max-content !important;
+            grid-template-rows: auto auto !important;
+            grid-template-areas:
+                "title button"
+                "desc  button" !important;
+                
+            gap: 0 15px !important;
+            align-items: center !important;
+        }
+
+        /* 4. טקסטים שחורים וברורים */
+        .portfolio-overlay h3 {
+            grid-area: title;
+            color: #000 !important; /* שחור מוחלט */
+            font-size: 1.3rem !important;
+            font-weight: 800 !important; /* הדגשה חזקה כדי שיבלוט */
+            margin: 0 !important;
+            line-height: 1.1 !important;
+            text-shadow: none !important;
+        }
+
+        .portfolio-overlay p {
+            grid-area: desc;
+            color: #444 !important; /* אפור כהה */
+            font-size: 0.9rem !important;
+            margin: 0 !important;
+            font-weight: 600 !important;
+            line-height: 1.2 !important;
+        }
+
+        /* 5. כפתור עם רקע שקוף ומסגרת שחורה */
+        .portfolio-btn {
+            grid-area: button;
+            background: rgba(255,255,255,0.8) !important; /* רקע לבן חלש מאוד למקרה שהלוגו מפריע */
+            color: #000 !important;
+            border: 1px solid #000 !important; /* מסגרת שחורה בולטת */
+            padding: 8px 18px !important;
+            font-size: 0.8rem !important;
+            border-radius: 50px;
+            width: auto !important;
+            margin: 0 !important;
+            white-space: nowrap;
+            font-weight: 700 !important;
+            transition: all 0.3s;
+        }
+
+        .portfolio-btn:hover {
+            background: #000 !important;
+            color: #fff !important;
+            transform: translateY(-2px);
+        }
+
+        /* התאמות לנייד */
+        @media (max-width: 768px) {
+            .portfolio-item { height: 260px !important; }
+            .portfolio-overlay { padding: 10px 12px 12px !important; }
+            .portfolio-overlay h3 { font-size: 1.15rem !important; }
+            .portfolio-btn { padding: 6px 14px !important; font-size: 0.75rem !important; }
+        }
+    </style>
+
+</head>
+
+<body class="fixed-background">
+
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                    <img src="assets/logo.m-1.png" alt="Studio Mizhalot">
+                </a>
+            
+            <nav>
+                <button class="hamburger" aria-label="תפריט">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-links">
+                    <button class="close-menu" aria-label="סגור תפריט">&times;</button>
+                    <li><a href="process.html">איך זה עובד?</a></li>
+                    <li><a href="logos.html" class="current-page">לוגו</a></li>
+                    <li><a href="books.html">ספרים</a></li>
+                    <li><a href="flyers.html">פליירים</a></li>
+                    <li><a href="invitations.html">הזמנות</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-progress-bar"></div> </header>
+    </header>
+
+    <main>
+        <section class="section" style="padding-top: 100px;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>עיצוב לוגו ומיתוג</h2>
+                    <p>מיתוג עסקי שנשאר בזיכרון ומשדר את ערכי העסק</p>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <img src="assets/gili-meusar.jpg" alt="לוגו אדריכלות">
+                        <div class="portfolio-overlay pointer-events-auto">
+                            <h3>עיצוב לוגו</h3>
+                            <p>מיתוג מודרני</p>
+                            <button class="portfolio-btn" onclick="contactAboutWork(this)">אני רוצה כזה</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/ripuy.png" alt="לוגו ריפוי בעיסוק">
+                        <div class="portfolio-overlay pointer-events-auto">
+                            <h3>מיתוג טיפולי</h3>
+                            <p>ריפוי בעיסוק</p>
+                            <button class="portfolio-btn" onclick="contactAboutWork(this)">אני רוצה כזה</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/mesek.jpg" alt="תיאור קצר">
+
+                        <div class="portfolio-overlay pointer-events-auto">
+                            <h3>כותרת העבודה</h3>
+
+                            <p>תיאור קצר נוסף</p>
+
+                            <button class="portfolio-btn" onclick="contactAboutWork(this)">אני רוצה כזה</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/yahalom.png" alt="תיאור קצר">
+
+                        <div class="portfolio-overlay pointer-events-auto">
+                            <h3>כותרת העבודה</h3>
+
+                            <p>תיאור קצר נוסף</p>
+
+                            <button class="portfolio-btn" onclick="contactAboutWork(this)">אני רוצה כזה</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/ahavat.jpg" alt="תיאור קצר">
+
+                        <div class="portfolio-overlay pointer-events-auto">
+                            <h3>כותרת העבודה</h3>
+
+                            <p>תיאור קצר נוסף</p>
+
+                            <button class="portfolio-btn" onclick="contactAboutWork(this)">אני רוצה כזה</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/benahat.jpg" alt="תיאור קצר">
+
+                        <div class="portfolio-overlay pointer-events-auto">
+                            <h3>כותרת העבודה</h3>
+
+                            <p>תיאור קצר נוסף</p>
+
+                            <button class="portfolio-btn" onclick="contactAboutWork(this)">אני רוצה כזה</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/kasyo.jpg" alt="תיאור קצר">
+
+                        <div class="portfolio-overlay pointer-events-auto">
+                            <h3>כותרת העבודה</h3>
+
+                            <p>תיאור קצר נוסף</p>
+
+                            <button class="portfolio-btn" onclick="contactAboutWork(this)">אני רוצה כזה</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/hayey.jpg" alt="תיאור קצר">
+
+                        <div class="portfolio-overlay pointer-events-auto">
+                            <h3>כותרת העבודה</h3>
+
+                            <p>תיאור קצר נוסף</p>
+
+                            <button class="portfolio-btn" onclick="contactAboutWork(this)">אני רוצה כזה</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="bottom-cta">
+        <div class="container">
+            <h3>אהבתם את מה שראיתם?</h3>
+            <a href="contact.html" class="text-btn">בואו נתחיל פרויקט יחד</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 סטודיו מצהלות. כל הזכויות שמורות.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <a href="https://wa.me/972585888205" class="whatsapp-float" target="_blank">
+        <img src="assets/wa.png" alt="WhatsApp">
+    </a>
+    <button id="scrollTopBtn" title="Go to top"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg></button>
+</body>
+
+</html>
